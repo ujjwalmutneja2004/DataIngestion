@@ -1,23 +1,3 @@
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const ingestRoute = require('./routes/ingest');
-// const statusRoute = require('./routes/status');
-// const { startProcessing } = require('./services/batchProcessor');
-
-// const app = express();
-// const PORT = 3000;
-
-// app.use(bodyParser.json());
-// app.use('/ingest', ingestRoute);
-// app.use('/status', statusRoute);
-
-// // Start batch processing in background
-// startProcessing();
-
-// app.listen(PORT, () => {
-//   console.log(`Server running on http://localhost:${PORT}`);
-// });
-
 
 const express = require("express");
 const bodyParser = require("body-parser");
