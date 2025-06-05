@@ -29,9 +29,10 @@ npm install
 npm start
 ```
 
-###📫 API Endpoints
+📫 API Endpoints
 ### 1. Submit Data Ingestion Request
 🔹 Endpoint: POST /ingest
+
 🔹 Content-Type: application/json
 
 🧾 Payload Example:
@@ -40,9 +41,10 @@ npm start
   "ids": [1, 2, 3, 4, 5],
   "priority": "HIGH"
 }
+```
 
-
-✅ Response Example:
+Response Example:
+```json
 {
   "ingestion_id": "abc123"
 }
@@ -51,8 +53,9 @@ npm start
 2. Check Ingestion Status
 Endpoint: GET /status/:ingestion_id
 
-```bash
+
 ✅ Response Example:
+```bash
 {
   "ingestion_id": "abc123",
   "status": "triggered",
