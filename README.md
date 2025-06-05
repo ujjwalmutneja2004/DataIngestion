@@ -22,14 +22,15 @@ This project implements a simple yet powerful asynchronous data ingestion system
 git clone https://github.com/ujjwalmutneja2004/DataIngestion.git
 cd DataIngestion
 npm install
-
-2. Start the Server
-npm start
-
 ```
 
-📫 API Endpoints
-1️⃣ Submit Data Ingestion Request
+### 2. Start the Server
+```
+npm start
+```
+
+###📫 API Endpoints
+### 1. Submit Data Ingestion Request
 🔹 Endpoint: POST /ingest
 🔹 Content-Type: application/json
 
@@ -50,6 +51,7 @@ npm start
 2. Check Ingestion Status
 Endpoint: GET /status/:ingestion_id
 
+```bash
 ✅ Response Example:
 {
   "ingestion_id": "abc123",
@@ -67,22 +69,21 @@ Endpoint: GET /status/:ingestion_id
     }
   ]
 }
+```
 
-🟢 Status Definitions
-Batch Status:
-yet_to_start
+🟢 **Status Definitions**
 
-triggered
+📦 **Batch Statuses:**
+`yet_to_start`: Batch job has not started yet.  
+`triggered`: Batch job has been triggered and is in progress.  
+`completed`: Batch job has been successfully completed.
 
-completed
+📊 **Overall Ingestion Status:**  
+Overall status is calculated based on the statuses of all associated batches:
 
-
-Overall Status:
-If all batches are yet_to_start → overall is yet_to_start
-
-If at least one batch is triggered → overall is triggered
-
-If all batches are completed → overall is completed
+✅ `yet_to_start` ➝ If **all batches** are in `yet_to_start` state.  
+🔄 `triggered` ➝ If **at least one batch** is `triggered` and **none are completed**.  
+🏁 `completed` ➝ If **all batches** are in `completed` state.
 
 
 
